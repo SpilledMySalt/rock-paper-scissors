@@ -29,12 +29,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Define array of possible options for computer
-let computerSelection, playerSelection;
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-console.log("You chose ${getPlayerChoice}");
+function game() {
+    
+    // Define variables
+    let computerSelection, playerSelection;
+    for (let i = 0; i < 5; i++) {
 
-// Check if player or computer won
-playRound(playerSelection, computerSelection);
+        computerSelection = getComputerChoice();
+        playerSelection = getPlayerChoice();
+        console.log("You chose ${getPlayerChoice}");
+
+        playRound(playerSelection, computerSelection);
+    } // end for loop to iterate through game 5 times
+}
+
+// Call game function which repeats five times
+game();
 
