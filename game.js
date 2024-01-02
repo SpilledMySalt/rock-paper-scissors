@@ -12,7 +12,6 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    console.log("Play round function call successful!");
     if (playerSelection == computerSelection) {
         console.log("TIE! Rematch.");
     }
@@ -20,13 +19,13 @@ function playRound(playerSelection, computerSelection) {
     else if ((playerSelection == "rock" && computerSelection == "scissors") || 
     (playerSelection == "paper" && computerSelection == "rock") ||
     (playerSelection == "scissors" && computerSelection == "paper")){
-        console.log("The player wins, ${playerSelection} beats ${computerSelection}!");
+        console.log("The player wins, "+playerSelection+" beats "+computerSelection+"!");
     }
 
     else if ((playerSelection == "scissors" && computerSelection == "rock") || 
     (playerSelection == "rock" && computerSelection == "paper") ||
     (playerSelection == "paper" && computerSelection == "scissors")){
-        console.log("The computer wins, ${computerSelection} beats ${playerSelection}!");
+        console.log("The computer wins, "+computerSelection+" beats "+playerSelection+"!");
     }
 }
 
@@ -34,12 +33,14 @@ function game() {
     
     // Define variables
     let computerSelection, playerSelection;
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 5; i++) {
+
+        console.log("Round "+(i + 1)+":");
 
         computerSelection = getComputerChoice();
         playerSelection = getPlayerChoice();
         console.log("You chose "+playerSelection);
-        console.log("The computer chose"+computerSelection);
+        console.log("The computer chose "+computerSelection);
 
         playRound(playerSelection, computerSelection);
     } // end for loop to iterate through game 5 times
