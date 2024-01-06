@@ -33,19 +33,33 @@ function game() {
     
     // Define variables
     let computerSelection, playerSelection;
-    for (let i = 0; i < 5; i++) {
+ 
 
-        console.log("Round "+(i + 1)+":");
+    //console.log("Round "+(i + 1)+":");
 
-        computerSelection = getComputerChoice();
-        playerSelection = getPlayerChoice();
-        console.log("You chose "+playerSelection);
-        console.log("The computer chose "+computerSelection);
+    computerSelection = getComputerChoice();
+    playerSelection = getPlayerChoice();
+    console.log("You chose "+playerSelection);
+    console.log("The computer chose "+computerSelection);
 
-        playRound(playerSelection, computerSelection);
-    } // end for loop to iterate through game 5 times
+    playRound(playerSelection, computerSelection);
+   
 }
 
-// Call game function which repeats five times
-game();
+// 
+const buttons = document.querySelectorAll(".buttonContainer button");
+console.log(buttons);
+
+// Add event listeners to each button
+buttons.forEach((button) => {
+    console.log("Test");
+
+    // Pass button ID and get computer selection into playRound
+    button.addEventListener("click", () => {
+        playRound(String(button.id), getComputerChoice());
+    });
+});
+
+
+
 
