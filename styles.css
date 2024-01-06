@@ -1,0 +1,19 @@
+* {
+    background-color: rgb(249, 242, 235);
+    font-family: 'Courier New', Courier, monospace;
+    
+    border: 1px solid red;
+}
+
+.interfaceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    padding: 4px;
+    margin: 4px;
+
+}

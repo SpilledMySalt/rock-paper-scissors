@@ -12,20 +12,24 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    // Choosing subtext to change to results of game
+    const gameStatus = document.querySelector("#status");
+
     if (playerSelection == computerSelection) {
-        console.log("TIE! Rematch.");
+        gameStatus.textContent = "TIE!";
     }
 
     else if ((playerSelection == "rock" && computerSelection == "scissors") || 
     (playerSelection == "paper" && computerSelection == "rock") ||
     (playerSelection == "scissors" && computerSelection == "paper")){
-        console.log("The player wins, "+playerSelection+" beats "+computerSelection+"!");
+        gameStatus.textContent = "The player wins, "+playerSelection+" beats "+computerSelection+"!";
     }
 
     else if ((playerSelection == "scissors" && computerSelection == "rock") || 
     (playerSelection == "rock" && computerSelection == "paper") ||
     (playerSelection == "paper" && computerSelection == "scissors")){
-        console.log("The computer wins, "+computerSelection+" beats "+playerSelection+"!");
+        gameStatus.textContent = "The computer wins, "+computerSelection+" beats "+playerSelection+"!";
     }
 }
 
@@ -46,13 +50,11 @@ function game() {
    
 }
 
-// 
+
 const buttons = document.querySelectorAll(".buttonContainer button");
-console.log(buttons);
 
 // Add event listeners to each button
 buttons.forEach((button) => {
-    console.log("Test");
 
     // Pass button ID and get computer selection into playRound
     button.addEventListener("click", () => {
